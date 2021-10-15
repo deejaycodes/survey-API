@@ -23,11 +23,12 @@ docker-compose up
 ---
 - ### API Security implemented in this task
 
-1. Add a rate limit for requests of 50 requests per 10 minutes using `express-rate-limit`.
+1. Rate limit for requests of 50 requests per 10 minutes using `express-rate-limit`.
 2. Secure HTTP headers using `helmet`.
 3 . Use `CORS` to make API public.
 
-Note - For a more robust application, more security implementations will be done
+Note - For a more robust application, more security implementations will be done like 
+jwt tokens, password hashing, cookies, sessions, etc.
 
 ---
 
