@@ -7,12 +7,11 @@ The task is to build a survey API with the following operations:
 
 # Get Started
 
-- Clone the repository using git clone https://github.com/ndrymes/User-transaction-app.git
+- Clone the repository using git clone https://github.com/deejaycodes/survey-API.git
 - Run `npm i` or `npm install` to install all app dependencies
 - Make a copy of the sample.env file and rename to .env
 - Start the app at the root directory using
-  - `npm run dev` for development
-  - `npm run start` for production
+  - `npm run start`
 
 ## To run the app via docker
 
@@ -22,7 +21,7 @@ docker-compose up
 ```
 # Demo
 
-The default endpoint is an health check endpoint that returns a success response.
+The base endpoint is an health check endpoint that returns a success response.
 
 ## API
 
@@ -30,21 +29,24 @@ There are multiple endpoints that can be used to retrieve records. Please find b
 
 | Parameter   | Description                                 |
 | ----------- | ------------------------------------------- |
-| Base Url    | https://immense-stream-85373.herokuapp.com/ |
+| Base Url    |  / 
 | Http Method | POST                                        |
-| Path        | /account/transaction/:accountId             |
+| Path        | /surveys                                    |
+| Http Method | POST                                        |
+| Path        | /surveys/:surveyId                          |
+| Http Method | POST                                        |
+| Path        | /answer                                     |
 | Http Method | GET                                         |
-| Path        | /account/balance/:accountId                 |
-| Http Method | GET                                         |
-| Path        | /account/history/:accountId                 |
+| Path        | /results/:surveyId                          |
 
 > These codes are custom to the app and the http status codes are still going to be sent
 
 ### Sample Request Parameters
 ```
-    {
-    "type": "debit",
-    "amount": 100
+ {
+	  "id":"a85Ddv6fd",
+	  "question" : "What is your name",
+	  "possibleAnswers" : ["black", "yellow", "blue"]
 }
 ```
 
@@ -52,17 +54,19 @@ There are multiple endpoints that can be used to retrieve records. Please find b
 
 ```
    {
+    "message": "survey created successfully",
     "error": false,
-    "code": 200,
-    "message": "Data gotten successfully",
+    "code": 201,
     "data": {
-        "balance": 100,
-        "ledgerBalance": 0,
-        "deleted": false,
-        "userId": "60d9b72887812e0011504b0d",
-        "accountId": "60d9b43387812e0011504aec",
-        "createdAt": "2021-06-28T11:48:15.731Z",
-        "updatedAt": "2021-09-26T16:38:17.763Z"
+        "survey": {
+            "id": "slayqNbfj",
+            "question": "What is your name",
+            "possibleAnswers": [
+                "black",
+                "yellow",
+                "blue"
+            ]
+        }
     }
 }
 ```
@@ -70,11 +74,10 @@ There are multiple endpoints that can be used to retrieve records. Please find b
 ### Sample Error Response Parameters
 
 ```
-    {
-    "error": true,
+   {
+    "message": "server error",
     "code": 500,
-    "message": "insufficent balance",
-    "data": []
+    "error": true
 }
 ```
 
@@ -85,8 +88,8 @@ There are multiple endpoints that can be used to retrieve records. Please find b
 # Libraries Used
 
 - Mocha - For running unit tests
-- Restidy - Popular framework with a lean set of features for running apps
-- Jest - For testing purpose
+- Express - Express. js is a free and open-source web application framework for Node. js.
+ It is used for designing and building web applications quickly and easily.
 
 # Todo
 
@@ -98,7 +101,7 @@ I had a lot of fun building this but there are some improvements I can still mak
 
 # Testing
 
-- To run the tests, simply type `npm test`
+- To run the tests, simply run this command `npm test`
 - We can also get code coverage by `npm run coverage`
 
 Thank you 👍
