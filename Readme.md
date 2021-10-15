@@ -50,13 +50,13 @@ Models will be created as follows :
 | ----------- | ------------------------------------------- |
 | Base Url    |  / 
 | Http Method | POST                                        |
-| Path        | /surveys                                    |
+| Path        | /api/surveys                                |
 | Http Method | POST                                        |
-| Path        | /surveys/:surveyId                          |
+| Path        | /api/surveys/:surveyId                      |
 | Http Method | POST                                        |
-| Path        | /answer                                     |
+| Path        | /api/answer                                 |
 | Http Method | GET                                         |
-| Path        | /results/:surveyId                          |
+| Path        | /api/results/:surveyId                      |
 
 > These codes are custom to the app and the http status codes are still going to be sent
 
@@ -101,6 +101,7 @@ Models will be created as follows :
 ```
 
 # Project Structure
+(Source folder only)
 
 ```
 ├── docker-compose.yml
