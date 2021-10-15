@@ -45,7 +45,7 @@ There are multiple endpoints that can be used to retrieve records. Please find b
 ```
  {
 	  "id":"a85Ddv6fd",
-	  "question" : "What is your name",
+	  "question" : "What is your favourite color?",
 	  "possibleAnswers" : ["black", "yellow", "blue"]
 }
 ```
@@ -60,7 +60,7 @@ There are multiple endpoints that can be used to retrieve records. Please find b
     "data": {
         "survey": {
             "id": "slayqNbfj",
-            "question": "What is your name",
+            "question": "What is your favourite color?",
             "possibleAnswers": [
                 "black",
                 "yellow",
