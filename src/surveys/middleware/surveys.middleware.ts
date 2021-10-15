@@ -9,7 +9,7 @@ import { surveysService } from '../services/index'
 class SurveysMiddleware {
 
     async validateRequiredSurveyBodyFields(req: express.Request, res: express.Response, next: express.NextFunction) {
-        if (req.body && req.body.id && req.body.possibleAnswers) {
+        if (req.body && req.body.question && req.body.possibleAnswers) {
             next();
         } else {
             res.status(400).send({ error: `Missing required fields question and possible answers` });

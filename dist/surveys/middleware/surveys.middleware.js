@@ -14,7 +14,7 @@ const index_1 = require("../services/index");
 class SurveysMiddleware {
     validateRequiredSurveyBodyFields(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (req.body && req.body.id && req.body.possibleAnswers) {
+            if (req.body && req.body.question && req.body.possibleAnswers) {
                 next();
             }
             else {

@@ -42,9 +42,9 @@ describe('API endpoints', function () {
             done();
         });
     });
-    it('should allow a POST to /surveys', function () {
+    it('should allow a POST to /api//surveys', function () {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield request.post('/surveys').send(firstQuestionBody);
+            const response = yield request.post('/api/surveys').send(firstQuestionBody);
             (0, chai_1.expect)(response.body.code).to.equal(201);
             (0, chai_1.expect)(response.body.data).not.to.be.empty;
             (0, chai_1.expect)(response.body).to.be.an('object');
@@ -53,9 +53,9 @@ describe('API endpoints', function () {
             questionId = response.body.data.survey.id;
         });
     });
-    it('should allow a GET to /surveys', function () {
+    it('should allow a GET to /api/surveys', function () {
         return __awaiter(this, void 0, void 0, function* () {
-            const res = yield request.get('/surveys');
+            const res = yield request.get('/api/surveys');
             (0, chai_1.expect)(res.body.code).to.equal(200);
             (0, chai_1.expect)(res.body.data).not.to.be.empty;
             (0, chai_1.expect)(res.body.data.surveys.length).to.be.equal(1);
@@ -63,25 +63,25 @@ describe('API endpoints', function () {
         });
     });
     describe('answer endpoints', function () {
-        it('should allow a POST to /answer', function () {
+        it('should allow a POST to /api/answer', function () {
             return __awaiter(this, void 0, void 0, function* () {
                 const answerBody = {
                     questionId: questionId,
                     answer: "black"
                 };
                 const res = yield request
-                    .post('/answer')
+                    .post('/api/answer')
                     .send(answerBody);
                 (0, chai_1.expect)(res.body.code).to.equal(201);
                 (0, chai_1.expect)(res.body.data).not.to.be.empty;
                 (0, chai_1.expect)(res.body.data.answer).to.be.an('object');
             });
         });
-        it('should disallow a POST to /answer with an nonexistent questionId', function () {
+        it('should disallow a POST to /api/answer with an nonexistent questionId', function () {
             return __awaiter(this, void 0, void 0, function* () {
                 correctAnswer = 'black';
                 const res = yield request
-                    .post(`/answer`)
+                    .post('/api/answer')
                     .send({
                     questionId: 'I don\'t exist',
                     answer: correctAnswer
@@ -90,10 +90,10 @@ describe('API endpoints', function () {
                 (0, chai_1.expect)(res.status).to.equal(404);
             });
         });
-        it('should disallow a POST to /answer with an answer that is not part of the possible answers', function () {
+        it('should disallow a POST to /api/answer with an answer that is not part of the possible answers', function () {
             return __awaiter(this, void 0, void 0, function* () {
                 const res = yield request
-                    .post(`/answer`)
+                    .post(`/api/answer`)
                     .send({
                     questionId: questionId,
                     answer: "wrong answer"
@@ -104,7 +104,7 @@ describe('API endpoints', function () {
         });
     });
     describe('results endpoints', function () {
-        it('should allow a GET to /results/:surveyId with a surveyId', function () {
+        it('should allow a GET to /api/results/:surveyId with a surveyId', function () {
             return __awaiter(this, void 0, void 0, function* () {
                 const res = yield request.get(`/results/${questionId}`);
                 (0, chai_1.expect)(res.body.code).to.equal(200);
@@ -112,19 +112,19 @@ describe('API endpoints', function () {
                 (0, chai_1.expect)(res.body.data.results[0]).to.be.equal(correctAnswer);
             });
         });
-        it('should disallow a GET to /results/:surveyId with a wrong surveyId', function () {
+        it('should disallow a GET to /api/results/:surveyId with a wrong surveyId', function () {
             return __awaiter(this, void 0, void 0, function* () {
                 const wrongSurveyId = '78uuyyyy';
-                const res = yield request.get(`/results/${wrongSurveyId}`);
+                const res = yield request.get(`/api/results/${wrongSurveyId}`);
                 (0, chai_1.expect)(res.status).to.equal(404);
                 (0, chai_1.expect)(res.body.error).to.equal(`Survey with id ${wrongSurveyId} not found`);
             });
         });
     });
     describe('input validation', function () {
-        it('should disallow a POST to /surveys with a request body without a question', function () {
+        it('should disallow a POST to /api/surveys with a request body without a question', function () {
             return __awaiter(this, void 0, void 0, function* () {
-                const response = yield request.post('/surveys').send(requestBodyWithoutQuestion);
+                const response = yield request.post('/api/surveys').send(requestBodyWithoutQuestion);
                 (0, chai_1.expect)(response.status).to.equal(400);
                 (0, chai_1.expect)(response.body.error).to.equal('Missing required fields question and possible answers');
             });

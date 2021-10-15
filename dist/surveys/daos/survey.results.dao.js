@@ -41,7 +41,7 @@ class SurveysAnswersDao {
                 return surveyResults;
             }
             else {
-                throw new Error('Survey does not have results');
+                return 'Survey does not have results';
             }
         });
     }

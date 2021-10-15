@@ -12,19 +12,19 @@ export class SurveysRoutes extends CommonRoutesConfig {
     configureRoutes() {
 
         //survey question routes
-        this.app.route(`/surveys`)
+        this.app.route('/api/surveys')
             .get(SurveysController.listSurveys)
             .post(
                 SurveysMiddleware.validateRequiredSurveyBodyFields,
                 SurveysController.createSurvey);
 
         this.app.param(`surveyId`, SurveysMiddleware.extractSurveyId);
-        this.app.route(`/surveys/:surveyId`)
+        this.app.route(`/api/surveys/:surveyId`)
             .all(SurveysMiddleware.validateSurveyExists)
             .get(SurveysController.getSurveyById)
 
         //survey anwers routes
-        this.app.route('/answer')
+        this.app.route('/api/answer')
             .post(
                 SurveysMiddleware.validateRequiredSurveyAnswerBodyFields,
                 SurveysMiddleware.validateAnswerBelongsToSurvey,
@@ -32,7 +32,7 @@ export class SurveysRoutes extends CommonRoutesConfig {
             )
             
         //get results for a survey
-        this.app.route('/results/:surveyId')
+        this.app.route('/api/results/:surveyId')
             .all(SurveysMiddleware.validateSurveyExists)
             .get(SurveysController.getSurveyResults)
 

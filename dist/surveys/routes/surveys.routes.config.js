@@ -10,18 +10,18 @@ class SurveysRoutes extends common_routes_config_1.CommonRoutesConfig {
     }
     configureRoutes() {
         //survey question routes
-        this.app.route(`/surveys`)
+        this.app.route('/api/surveys')
             .get(index_1.surveysController.listSurveys)
             .post(index_2.surveysMiddleware.validateRequiredSurveyBodyFields, index_1.surveysController.createSurvey);
         this.app.param(`surveyId`, index_2.surveysMiddleware.extractSurveyId);
-        this.app.route(`/surveys/:surveyId`)
+        this.app.route(`/api/surveys/:surveyId`)
             .all(index_2.surveysMiddleware.validateSurveyExists)
             .get(index_1.surveysController.getSurveyById);
         //survey anwers routes
-        this.app.route('/answer')
+        this.app.route('/api/answer')
             .post(index_2.surveysMiddleware.validateRequiredSurveyAnswerBodyFields, index_2.surveysMiddleware.validateAnswerBelongsToSurvey, index_1.surveysController.createSurveyAnswer);
         //get results for a survey
-        this.app.route('/results/:surveyId')
+        this.app.route('/api/results/:surveyId')
             .all(index_2.surveysMiddleware.validateSurveyExists)
             .get(index_1.surveysController.getSurveyResults);
         return this.app;

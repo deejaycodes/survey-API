@@ -38,8 +38,8 @@ describe('API endpoints', function () {
         });
     });
 
-    it('should allow a POST to /surveys', async function () {
-        const response = await request.post('/surveys').send(firstQuestionBody);
+    it('should allow a POST to /api//surveys', async function () {
+        const response = await request.post('/api/surveys').send(firstQuestionBody);
         expect(response.body.code).to.equal(201);
         expect(response.body.data).not.to.be.empty;
         expect(response.body).to.be.an('object');
@@ -49,8 +49,8 @@ describe('API endpoints', function () {
 
     });
 
-    it('should allow a GET to /surveys', async function () {
-        const res = await request.get('/surveys');
+    it('should allow a GET to /api/surveys', async function () {
+        const res = await request.get('/api/surveys');
         expect(res.body.code).to.equal(200);
         expect(res.body.data).not.to.be.empty;
         expect(res.body.data.surveys.length).to.be.equal(1);
@@ -58,24 +58,24 @@ describe('API endpoints', function () {
     })
 
     describe('answer endpoints', function () {
-        it('should allow a POST to /answer', async function () {
+        it('should allow a POST to /api/answer', async function () {
             const answerBody =
             {
                 questionId: questionId,
                 answer: "black"
             }
             const res = await request
-                .post('/answer')
+                .post('/api/answer')
                 .send(answerBody);
             expect(res.body.code).to.equal(201);
             expect(res.body.data).not.to.be.empty;
             expect(res.body.data.answer).to.be.an('object')
         });
 
-        it('should disallow a POST to /answer with an nonexistent questionId', async function () {
+        it('should disallow a POST to /api/answer with an nonexistent questionId', async function () {
             correctAnswer = 'black'
             const res = await request
-                .post(`/answer`)
+                .post('/api/answer')
                 .send({
                 questionId: 'I don\'t exist',
                 answer: correctAnswer
@@ -86,9 +86,9 @@ describe('API endpoints', function () {
                 expect(res.status).to.equal(404);
         });
 
-        it('should disallow a POST to /answer with an answer that is not part of the possible answers', async function () {
+        it('should disallow a POST to /api/answer with an answer that is not part of the possible answers', async function () {
             const res = await request
-                .post(`/answer`)
+                .post(`/api/answer`)
                 .send({
                 questionId: questionId,
                 answer: "wrong answer"
@@ -103,16 +103,16 @@ describe('API endpoints', function () {
     });
 
     describe('results endpoints', function () {
-        it('should allow a GET to /results/:surveyId with a surveyId', async function () {
+        it('should allow a GET to /api/results/:surveyId with a surveyId', async function () {
             const res = await request.get(`/results/${questionId}`);
             expect(res.body.code).to.equal(200);
             expect(res.body.data).not.to.be.empty;
             expect(res.body.data.results[0]).to.be.equal(correctAnswer);
         })
 
-        it('should disallow a GET to /results/:surveyId with a wrong surveyId', async function () {
+        it('should disallow a GET to /api/results/:surveyId with a wrong surveyId', async function () {
             const wrongSurveyId = '78uuyyyy';
-            const res = await request.get(`/results/${wrongSurveyId}`);
+            const res = await request.get(`/api/results/${wrongSurveyId}`);
             expect(res.status).to.equal(404);
             expect(res.body.error).to.equal(
                 `Survey with id ${wrongSurveyId} not found`
@@ -122,8 +122,8 @@ describe('API endpoints', function () {
 
     })
     describe('input validation', function () {
-        it('should disallow a POST to /surveys with a request body without a question', async function () {
-        const response = await request.post('/surveys').send(requestBodyWithoutQuestion);
+        it('should disallow a POST to /api/surveys with a request body without a question', async function () {
+        const response = await request.post('/api/surveys').send(requestBodyWithoutQuestion);
         expect(response.status).to.equal(400);
         expect(response.body.error).to.equal('Missing required fields question and possible answers')
         })
