@@ -170,7 +170,7 @@ Please find below a # POSTMAN DOCUMENTATION # url for the task
 - Nodejs - JavaScript runtime environment for building backend applications.
  
 
-# Areas of improvemnet
+# Areas of improvement
 
 I had a lot of fun building this but there are some improvements I can still make:
 
