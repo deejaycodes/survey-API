@@ -66,6 +66,7 @@ class SurveysController {
                     .json((0, api_response_1.success)("survey results fetched successfully", { results }, res.statusCode));
             }
             else {
+                console.log((0, api_response_1.error)("server error", res.statusCode));
                 res.status(500).json((0, api_response_1.error)("server error", res.statusCode));
             }
         });

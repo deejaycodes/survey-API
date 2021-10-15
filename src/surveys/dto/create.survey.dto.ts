@@ -1,5 +1,5 @@
 export interface CreateSurveyDto {
-    id: string;
+    id?: string;
     question: string;
     possibleAnswers: string[];
     createdAt: Date

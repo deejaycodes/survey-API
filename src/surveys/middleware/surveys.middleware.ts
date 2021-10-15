@@ -1,6 +1,5 @@
 import express from 'express';
 
-import { SurveyDto, SurveyAnswerDto, SurveyResultsDto } from "../dto/survey.dto";
 import { surveys } from "../daos/survey.dao"
 
 import { surveysService } from '../services/index'

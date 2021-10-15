@@ -104,7 +104,8 @@ describe('API endpoints', function () {
 
     describe('results endpoints', function () {
         it('should allow a GET to /api/results/:surveyId with a surveyId', async function () {
-            const res = await request.get(`/results/${questionId}`);
+            const res = await request.get(`/api/results/${questionId}`);
+            console.log(res.body);
             expect(res.body.code).to.equal(200);
             expect(res.body.data).not.to.be.empty;
             expect(res.body.data.results[0]).to.be.equal(correctAnswer);
