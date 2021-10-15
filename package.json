@@ -8,7 +8,7 @@
     "debug": "export DEBUG=* && npm start",
     "test": "mocha -r ts-node/register 'src/test/**/*.test.ts' --unhandled-rejections=strict",
     "test-debug": "export DEBUG=* && npm test",
-    "coverage" : "nyc mocha -r ts-node/register 'src/test/**/*.test.ts' --unhandled-rejections=strict"
+    "coverage": "nyc mocha -r ts-node/register 'src/test/**/*.test.ts' --unhandled-rejections=strict"
   },
   "author": "Deji Odetayo",
   "license": "ISC",

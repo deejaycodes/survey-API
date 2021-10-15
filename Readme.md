@@ -40,7 +40,7 @@ I used Typescript and combined it with Data Access Object (DAO) design pattern t
 DTOs are objects that conform to data model types, and DAOs are the services that use them.
 
 # Database Implementation
-For this coding challenge, no database was used. The data created were all stored in an array and retrieved from the array, which means the data evaporates whenever we quit our Node.js app.
+For this coding challenge, no database was used. The data created were all stored in an array and retrieved from the array, which means the data evaporates whenever we quit our Node.js app.I also used shortid package to generate a unique ID for each survey created.
 MONGODB and Mongoose ODM will be a good choice for a project like this.
 Models will be created as follows : 
  ## Questions Model 
@@ -56,7 +56,7 @@ Models will be created as follows :
 
 ## API
 
- Please find below a POSTMAN documentation url is <a href="https://documenter.getpostman.com/view/7667873/UUxxhUPR">https://documenter.getpostman.com/view/7667873/UUxxhUPR</a>.
+ Please find below a POSTMAN documentation url is <a href="https://documenter.getpostman.com/view/17940103/UV5WCHG7">https://documenter.getpostman.com/view/17940103/UV5WCHG7</a>.
 
 | Parameter   | Description                                 |
 | ----------- | ------------------------------------------- |

@@ -2,7 +2,7 @@ import express from 'express';
 import * as http from 'http';
 import * as winston from 'winston';
 import * as expressWinston from 'express-winston';
-import cors from 'cors';
+import cors from 'cors';;
 import { CommonRoutesConfig } from './common/common.routes.config';
 import { SurveysRoutes } from './surveys/routes/surveys.routes.config';
 import helmet from 'helmet'
@@ -22,6 +22,7 @@ const limiter = rateLimit.default({
 	windowMs: 10 * 60 * 1000,
 	max: 500,
 });
+
 
 //apply to all routes
 app.use(limiter);

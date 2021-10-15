@@ -63,7 +63,6 @@ class SurveysController {
             return res.status(200)
                 .json(success("survey results fetched successfully", { results }, res.statusCode));
         } else {
-            console.log(error("server error", res.statusCode));
             res.status(500).json(error("server error", res.statusCode));
         }
     }

@@ -42,7 +42,7 @@ describe('API endpoints', function () {
             done();
         });
     });
-    it('should allow a POST to /api/surveys', function () {
+    it('should allow a POST to /api//surveys', function () {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield request.post('/api/surveys').send(firstQuestionBody);
             (0, chai_1.expect)(response.body.code).to.equal(201);
@@ -107,19 +107,20 @@ describe('API endpoints', function () {
         it('should allow a GET to /api/results/:surveyId with a surveyId', function () {
             return __awaiter(this, void 0, void 0, function* () {
                 const res = yield request.get(`/api/results/${questionId}`);
-                (0, chai_1.expect)(res.body.status).to.equal(200);
+                console.log(res.body);
+                (0, chai_1.expect)(res.body.code).to.equal(200);
                 (0, chai_1.expect)(res.body.data).not.to.be.empty;
                 (0, chai_1.expect)(res.body.data.results[0]).to.be.equal(correctAnswer);
             });
         });
-        // it('should disallow a GET to /api/results/:surveyId with a wrong surveyId', async function () {
-        //     const wrongSurveyId = '78uuyyyy';
-        //     const res = await request.get(`/api/results/${wrongSurveyId}`);
-        //     // expect(res.status).to.equal(404);
-        //     expect(res.body.error).to.equal(
-        //         `Survey with id ${wrongSurveyId} not found`
-        //     );
-        // })
+        it('should disallow a GET to /api/results/:surveyId with a wrong surveyId', function () {
+            return __awaiter(this, void 0, void 0, function* () {
+                const wrongSurveyId = '78uuyyyy';
+                const res = yield request.get(`/api/results/${wrongSurveyId}`);
+                (0, chai_1.expect)(res.status).to.equal(404);
+                (0, chai_1.expect)(res.body.error).to.equal(`Survey with id ${wrongSurveyId} not found`);
+            });
+        });
     });
     describe('input validation', function () {
         it('should disallow a POST to /api/surveys with a request body without a question', function () {

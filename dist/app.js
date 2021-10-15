@@ -27,6 +27,7 @@ const http = __importStar(require("http"));
 const winston = __importStar(require("winston"));
 const expressWinston = __importStar(require("express-winston"));
 const cors_1 = __importDefault(require("cors"));
+;
 const surveys_routes_config_1 = require("./surveys/routes/surveys.routes.config");
 const helmet_1 = __importDefault(require("helmet"));
 const debug_1 = __importDefault(require("debug"));
@@ -40,7 +41,7 @@ const routes = [];
 const debugLog = (0, debug_1.default)('app');
 const limiter = rateLimit.default({
     windowMs: 10 * 60 * 1000,
-    max: 100,
+    max: 500,
 });
 //apply to all routes
 app.use(limiter);
