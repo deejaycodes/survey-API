@@ -1,4 +1,4 @@
-# App Test
+# Survey API
 
 The task is to build a survey API with the following operations:
  - Create a survey
