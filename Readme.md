@@ -23,6 +23,21 @@ docker-compose up
 
 The base endpoint is an health check endpoint that returns a success response.
 
+# Choice of design pattern
+I used Typescript and combined it with Data Access Object (DAO) design pattern to implement Single Responsiblity Principle and Data Transfer Object(DTO).
+DTOs are objects that conform to data model types, and DAOs are the services that use them.
+
+## Database Implementation
+For this coding challenge, no database was used. The data created were all stored in an array and retrieved from the array, which means the data evaporates whenever we quit our Node.js app.
+MONGODB will be a good choice of database for a project like this.
+Models will be created as follow : 
+ # Question Model 
+ 	- This will define the schema for how questions (surveys) will be stored in the database.
+	- It will have a relationship with the Answer Model.
+ # Answers Model
+ 	- This will define the schema for how answers to each survey question will be stored in the database.
+	- It will have a relationship with the Question Model.
+	
 
 ## API
 
