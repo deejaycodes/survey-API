@@ -19,9 +19,6 @@ The task is to build a survey API with the following operations:
 docker-compose up
 
 ```
-# Demo
-
-The base endpoint is an health check endpoint that returns a success response.
 
 ---
 - ### API Security implemented in this task
