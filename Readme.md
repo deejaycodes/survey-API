@@ -27,21 +27,24 @@ The base endpoint is an health check endpoint that returns a success response.
 I used Typescript and combined it with Data Access Object (DAO) design pattern to implement Single Responsiblity Principle and Data Transfer Object(DTO).
 DTOs are objects that conform to data model types, and DAOs are the services that use them.
 
-## Database Implementation
+# Database Implementation
 For this coding challenge, no database was used. The data created were all stored in an array and retrieved from the array, which means the data evaporates whenever we quit our Node.js app.
-MONGODB will be a good choice of database for a project like this.
-Models will be created as follow : 
- # Question Model 
+MONGODB and Mongoose ODM will be a good choice for a project like this.
+Models will be created as follows : 
+ ## Questions Model 
  	- This will define the schema for how questions (surveys) will be stored in the database.
 	- It will have a relationship with the Answer Model.
- # Answers Model
+ ## Answers Model
  	- This will define the schema for how answers to each survey question will be stored in the database.
 	- It will have a relationship with the Question Model.
 	
+## Data Creation and Retrieval	
+ - This will be implemented using mongoose ORM methods for CRUD processes. The Data Transfer Objects will help to conform strictly to model types
+ while Data Access Object will carry out database related transactions just like we have it in repository pattern.
 
 ## API
 
-There are multiple endpoints that can be used to retrieve records. Please find below a POSTMAN documentation url is <a href="https://documenter.getpostman.com/view/7667873/UUxxhUPR">https://documenter.getpostman.com/view/7667873/UUxxhUPR</a>.
+ Please find below a POSTMAN documentation url is <a href="https://documenter.getpostman.com/view/7667873/UUxxhUPR">https://documenter.getpostman.com/view/7667873/UUxxhUPR</a>.
 
 | Parameter   | Description                                 |
 | ----------- | ------------------------------------------- |
