@@ -52,7 +52,7 @@ Models will be created as follows :
  - This will be implemented using mongoose ORM methods for CRUD processes. The Data Transfer Objects will help to conform strictly to model types
  while Data Access Object will carry out database related transactions just like we have it in repository pattern.
 
-## API endpoints and documantation
+## API endpoints and documentation
 
 Please find below a # POSTMAN DOCUMENTATION # url for the task
 <a href="https://documenter.getpostman.com/view/17940103/UV5WCHG7">https://documenter.getpostman.com/view/17940103/UV5WCHG7</a>.
