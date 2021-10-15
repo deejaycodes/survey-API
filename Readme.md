@@ -175,7 +175,7 @@ Models will be created as follows :
 
 I had a lot of fun building this but there are some improvements I can still make:
 
-- More tests, especially  unit tests for all other  and integration using super test.
+- More tests, especially  unit tests for the DAOs and Services.
 - Implement a suitable backend to for data storage and retrieval
 - Include a makefile to ease the execution of some common tasks
 - Add users with authentication and authorization
