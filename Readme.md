@@ -84,44 +84,6 @@ There are multiple endpoints that can be used to retrieve records. Please find b
 # Project Structure
 
 ```
-├── dist
-│   ├── app.js
-│   ├── common
-│   │   ├── common.routes.config.js
-│   │   └── interfaces
-│   │       ├── crud.interface.js
-│   │       └── results.interface.js
-│   ├── surveys
-│   │   ├── constants
-│   │   │   └── http-status.js
-│   │   ├── controllers
-│   │   │   ├── index.js
-│   │   │   └── surveys.controller.js
-│   │   ├── daos
-│   │   │   ├── index.js
-│   │   │   ├── survey.answer.dao.js
-│   │   │   ├── survey.dao.js
-│   │   │   └── survey.results.dao.js
-│   │   ├── dto
-│   │   │   ├── create.survey.dto.js
-│   │   │   └── survey.dto.js
-│   │   ├── helpers
-│   │   │   ├── api.response.js
-│   │   │   └── logger.js
-│   │   ├── middleware
-│   │   │   ├── index.js
-│   │   │   └── surveys.middleware.js
-│   │   ├── routes
-│   │   │   └── surveys.routes.config.js
-│   │   └── services
-│   │       ├── answers.services.js
-│   │       ├── index.js
-│   │       ├── results.services.js
-│   │       └── surveys.services.js
-│   └── test
-│       ├── app.test.js
-│       └── surveys
-│           └── surveys.test.js
 ├── docker-compose.yml
 ├── Dockerfile
 ├── package.json
@@ -167,7 +129,7 @@ There are multiple endpoints that can be used to retrieve records. Please find b
 │       └── surveys
 │           └── surveys.test.ts
 └── tsconfig.json
-
+ 	
 ```
 # Libraries Used
 
