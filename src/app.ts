@@ -20,7 +20,7 @@ const debugLog: debug.IDebugger = debug('app');
 
 const limiter = rateLimit.default({
 	windowMs: 10 * 60 * 1000,
-	max: 100,
+	max: 500,
 });
 
 //apply to all routes

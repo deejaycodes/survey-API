@@ -23,6 +23,18 @@ docker-compose up
 
 The base endpoint is an health check endpoint that returns a success response.
 
+---
+- ### API Security implemented in this task
+
+1. Add a rate limit for requests of 50 requests per 10 minutes using `express-rate-limit`.
+2. Secure HTTP headers using `helmet`.
+3 . Use `CORS` to make API public.
+
+Note - For a more robust application, more security implementations will be done
+
+---
+
+
 # Choice of design pattern
 I used Typescript and combined it with Data Access Object (DAO) design pattern to implement Single Responsiblity Principle and Data Transfer Object(DTO).
 DTOs are objects that conform to data model types, and DAOs are the services that use them.
@@ -151,11 +163,12 @@ Models will be created as follows :
 └── tsconfig.json
  	
 ```
-# Libraries Used
+# Libraries/Frameworks Used
 
 - Mocha - For running unit tests
 - Express - Express. js is a free and open-source web application framework for Node. js.
  It is used for designing and building web applications quickly and easily.
+- Nodejs - JavaScript runtime environment for building backend applications.
  
 
 # Todo
