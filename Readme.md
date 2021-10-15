@@ -171,13 +171,14 @@ Models will be created as follows :
 - Nodejs - JavaScript runtime environment for building backend applications.
  
 
-# Todo
+# Areas of improvemnet
 
 I had a lot of fun building this but there are some improvements I can still make:
 
-- More tests, especially  unit tests for all other  and integration using super test.
-- Add a dependency injection library like awilix to handle injection of dependencies
+- More tests, especially  unit tests for the DAOs and Services.
+- Implement a suitable backend to for data storage and retrieval
 - Include a makefile to ease the execution of some common tasks
+- Add users with authentication and authorization
 
 # Testing
 
