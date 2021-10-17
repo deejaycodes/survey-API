@@ -49,7 +49,7 @@ Models will be created as follows :
 	- It will have a relationship with the Question Model.
 	
 ## Data Creation and Retrieval	
- - This will be implemented using mongoose ORM methods for CRUD processes. The Data Transfer Objects will help to conform strictly to model types
+ - This will be implemented using mongoose ODM methods for CRUD processes. The Data Transfer Objects will help to conform strictly to model types
  while Data Access Object will carry out database related transactions just like we have it in repository pattern.
 
 ## API endpoints and documentation
