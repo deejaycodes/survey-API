@@ -39,7 +39,7 @@ DTOs are objects that conform to data model types, and DAOs are the services tha
 
 # Database Implementation
 For this coding challenge, no database was used. The data created were all stored in an array and retrieved from the array, which means the data evaporates whenever we quit our Node.js app.I also used shortid package to generate a unique ID for each survey created.
-MONGODB and Mongoose ODM will be a good choice for a project like this.
+MONGO DB and Mongoose ODM will be a good choice for a project like this.
 Models will be created as follows : 
  ## Questions Model 
  	- This will define the schema for how questions (surveys) will be stored in the database.
