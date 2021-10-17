@@ -13,7 +13,7 @@ class SurveysService implements CRUD_OPERATIONS {
         return SurveysDao.getSurveys();
     };
     
-   //check should it be a string or a number
+
     async readById(resourceId: string) {
         return SurveysDao.getSurveyById(resourceId);
     };
