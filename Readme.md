@@ -47,6 +47,7 @@ Models will be created as follows :
  ## Answers Model
  	- This will define the schema for how answers to each survey question will be stored in the database.
 	- It will have a relationship with the Question Model.
+	- Results for a survey will be fetched from the Answers model based on the Id of the survey.
 	
 ## Data Creation and Retrieval	
  - This will be implemented using mongoose ODM methods for CRUD processes. The Data Transfer Objects will help to conform strictly to model types
