@@ -111,7 +111,7 @@ Please find below a # POSTMAN DOCUMENTATION # url for the task
 }
 ```
 
-# Project Structure
+# Project Folder Structure
 (Source folder only)
 
 ```
